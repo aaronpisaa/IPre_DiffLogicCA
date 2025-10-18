@@ -1,0 +1,23 @@
+# =========================================================
+# Requisitos del Proyecto DiffLogic CA
+# =========================================================
+
+# Se fijan estas versiones de JAX y JAXLIB para reproducibilidad.
+jax[cuda12_pip]==0.4.33
+jaxlib==0.4.33
+
+# Deep Learning Frameworks y Utilidades
+flax
+optax
+
+# Manejo de Tensores y Modelos
+einops
+
+# Computación Numérica
+numpy
+
+# Visualización, Gráficos y Notebook
+matplotlib
+Pillow
+ipython
+requests
