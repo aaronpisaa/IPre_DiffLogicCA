@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<!-- saved from url=(0062)https://patagon.uach.cl/tutoriales/administracion-contenedores -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Patagón | T04 - Administrar mis contenedores</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="generator" content="GravCMS">
+    <meta name="description" content="Supercomputer of Austral University of Chile">
+
+    <link rel="icon" type="image/png" href="https://patagon.uach.cl/user/themes/darkquark/images/favicon.png">
+    <link rel="canonical" href="http://patagon.uach.cl/tutoriales/administracion-contenedores">
+
+                            
+              
+    <link href="./Patagón _ T04 - Administrar mis contenedores_files/all.min.css" type="text/css" rel="stylesheet">
+<link href="./Patagón _ T04 - Administrar mis contenedores_files/line-awesome.min.css" type="text/css" rel="stylesheet">
+<link href="./Patagón _ T04 - Administrar mis contenedores_files/notices.css" type="text/css" rel="stylesheet">
+<link href="./Patagón _ T04 - Administrar mis contenedores_files/form-styles.css" type="text/css" rel="stylesheet">
+<link href="./Patagón _ T04 - Administrar mis contenedores_files/login.css" type="text/css" rel="stylesheet">
+<link href="./Patagón _ T04 - Administrar mis contenedores_files/spectre.min.css" type="text/css" rel="stylesheet">
+<link href="./Patagón _ T04 - Administrar mis contenedores_files/theme.min.css" type="text/css" rel="stylesheet">
+<link href="./Patagón _ T04 - Administrar mis contenedores_files/custom.css" type="text/css" rel="stylesheet">
+<style>
+.gist table { table-layout: auto; }
+</style>
+
+    <script src="./Patagón _ T04 - Administrar mis contenedores_files/jquery-3.x.min.js"></script>
+<script>
+/* GA tracking blocked, reason: client ip 10.201.2.1 is in range "private" */
+</script>
+
+</head>
+<body id="top" class=" header-fixed header-animated sticky-footer">
+    <div id="page-wrapper">
+            <section id="header" class="section">
+            <section class="container grid-xl">
+                <nav class="navbar">
+                    <section class="navbar-section logo">
+                        <a href="https://patagon.uach.cl/" class="navbar-brand mr-10">
+    <img src="./Patagón _ T04 - Administrar mis contenedores_files/patagon-logo-text-color.svg" alt="Patagón">
+</a>                    </section>
+                    <section class="navbar-section desktop-menu">
+
+                        <nav class="dropmenu animated">
+                                                    <ul class="langswitcher">
+</ul>                                                                            
+<ul>
+                <li>
+      <a href="https://patagon.uach.cl/" class="">
+        Home
+      </a>
+          </li>
+          <li>
+      <a href="https://patagon.uach.cl/patagon" class="">
+        Patagón
+      </a>
+            <ul>
+                    <li>
+      <a href="https://patagon.uach.cl/patagon/especificaciones-tecnicas" class="">
+        Especificaciones-tecnicas
+      </a>
+          </li>
+          <li>
+      <a href="https://patagon.uach.cl/patagon/solicitud" class="">
+        Solicitud de uso
+      </a>
+          </li>
+          <li>
+      <a href="https://patagon.uach.cl/patagon/entorno-slurm" class="">
+        Entorno SLURM
+      </a>
+          </li>
+          <li>
+      <a href="https://patagon.uach.cl/patagon/agradecimientos-y-citacion" class="">
+        Agradecimientos y citación
+      </a>
+          </li>
+  
+      </ul>
+          </li>
+          <li>
+      <a href="https://patagon.uach.cl/tutoriales" class="active">
+        Tutoriales
+      </a>
+            <ul>
+                    <li>
+      <a href="https://patagon.uach.cl/tutoriales/t01-generar-llave-ssh" class="">
+        T01 - Generar llave SSH
+      </a>
+          </li>
+          <li>
+      <a href="https://patagon.uach.cl/tutoriales/contenedores-en-patagon" class="">
+        T02 - Contenedores en Patagón
+      </a>
+          </li>
+          <li>
+      <a href="https://patagon.uach.cl/tutoriales/how-to-launch-slurm-jobs" class="">
+        T03 - Ejecución de Tareas
+      </a>
+          </li>
+          <li>
+      <a href="https://patagon.uach.cl/tutoriales/administracion-contenedores" class="active">
+        T04 - Administrar mis contenedores
+      </a>
+          </li>
+          <li>
+      <a href="https://patagon.uach.cl/tutoriales/t05-machine-learning-con-python-en-patagon" class="">
+        T05 - Machine Learning con Python en Patagon
+      </a>
+          </li>
+          <li>
+      <a href="https://patagon.uach.cl/tutoriales/t06-cheat-sheet-patagon" class="">
+        T06 - Cheat Sheet Patagon
+      </a>
+          </li>
+  
+      </ul>
+          </li>
+          <li>
+      <a href="https://patagon.uach.cl/research" class="">
+        Research
+      </a>
+          </li>
+          <li>
+      <a href="https://patagon.uach.cl/live-metrics" class="">
+        Live-metrics
+      </a>
+          </li>
+          <li>
+      <a href="https://patagon.uach.cl/contacto" class="">
+        Contacto
+      </a>
+          </li>
+  
+</ul>
+
+                                                </nav>
+
+                        
+                    </section>
+                </nav>
+            </section>
+        </section>
+        <div class="mobile-menu">
+            <div class="button_container" id="toggle">
+                <span class="top"></span>
+                <span class="middle"></span>
+                <span class="bottom"></span>
+            </div>
+        </div>
+    
+    
+        <section id="start">
+                    <section id="body-wrapper" class="section">
+                <section class="container grid-xl">
+                                            
+                                            <h2>Tutorial 04 - Administrar mis Contenedores</h2>
+<h3>1) Descargar un contenedor en el Patagón</h3>
+<p>La descarga de un contenedor se hace al momento de ejecutar una tarea, solo la primera vez, y sigue la estructura</p>
+<pre><code>srun --container-name=&lt;nombre-arbitrario&gt; --container-image=&lt;url-imagen-contenedor&gt; &lt;comando-de-ejecucion&gt;</code></pre>
+<p>Por ejemplo, si quisieramos descargar el <a href="https://ngc.nvidia.com/catalog/containers/nvidia:cuda">contenedor de CUDA</a> entonces seria</p>
+<pre><code>srun --container-name=cuda-11.2.2  --container-image='nvcr.io/nvidia/cuda:11.2.2-devel-ubuntu20.04' nvcc --version</code></pre>
+<p>Mas información sobre la descarga de contenedores con <code>srun</code> en el tutorial de <a href="https://patagon.uach.cl/patagon/tutoriales/how-to-launch-slurm-jobs.html">ejecución de tareas</a> parte 3) Ejecución con Contenedores.</p>
+<h3>2) Consultar por mis contenedores descargados</h3>
+<p>Cada vez que se ejecuta un trabajo SLURM con un contenedor nuevo, este puede quedar descargado y <em>cacheado</em> en el almacenamiento para futuros usos si es que el usuario así lo decidió (parámetro <code>--container-name=...</code>). Para consultar por los contenedores instalados, ejecutar el siguiente comando</p>
+<pre><code>➜  ~ srun --pty enroot list</code></pre>
+<p>El siguiente ejemplo muestra para un usuario en particular, sus contenedores ya descargados en el Patagón:</p>
+<pre><code>➜  ~ srun --pty enroot list
+pyxis_benchmark-hpl
+pyxis_cuda:11.4.1-devel
+pyxis_hpcsdk
+pyxis_pytorch</code></pre>
+<p>(Nota: los contenedores mostrados son los del usuario que ejecuta el comando)</p>
+<h3>3) Eliminar un contenedor del Patagón</h3>
+<p>Una buena práctica para el ecosistema del Patagón es eliminar los contenedores que uno ya no usa. La estructura del comando para eliminar un contenedor es:</p>
+<pre><code>srun --pty enroot remove &lt;nombre-contenedor&gt;</code></pre>
+<p>Continuando con el ejemplo anterior, si quisiéramos eliminar el contenedor de pytorch (<code>pyxis_pytorch</code>), seria:</p>
+<pre><code>➜  ~ srun --pty enroot remove pyxis_pytorch    
+Do you really want to delete /home/enroot-data/user-1000/pyxis_pytorch? [y/N] y
+➜  ~ </code></pre>
+<p>(Nota: si el contenedor era muy pesado, entonces la eliminación podría tardar algunos segundos.)</p>
+<p>Luego, se puede confirmar que el contenedor efectivamente ha sido eliminado.</p>
+<pre><code>➜  ~ srun --pty enroot list              
+pyxis_benchmark-hpl
+pyxis_cuda:11.4.1-devel
+pyxis_hpcsdk</code></pre>
+<p>Para saber más sobre <code>enroot</code> y sus distintas opciones, ejecutar <code>srun --pty enroot --help</code>.</p>
+<h3>4) Instalar paquetes dentro de un contenedor</h3>
+<p>En el Patagón es posible instalar paquetes adicionales en los contenedores que usamos. Esto resulta muy útil ya que a menudo necesitamos extender nuestro contenedor con librerías adicionales, y así poder concentrar nuestro ambiente en un mismo contenedor. Para iniciar, lo primero que hay que saber es que es posible entrar por terminal al contenedor de forma análoga a como uno entra a un servidor. </p>
+<p>Para entrar a un contenedor usamos <code>srun</code> con el comando <code>bash</code> y en modo interactivo <code>pty</code>. La estructura para entrar es</p>
+<pre><code>srun --container-name=&lt;nombre-contenedor&gt; --pty bash</code></pre>
+<p>y como podemos notar, no es necesario pedir recursos hardware ya que es un trabajo de administración.</p>
+<p>La primera vez que se entra a un contenedor es necesario actualizar el listado de paquetes ejecutando el siguiente comando desde dentro del contenedor</p>
+<pre><code>apt-get update</code></pre>
+<p>Si su contenedor no cuenta con <code>apt</code> y <code>apt-get</code>, entonces deberá averiguar cual es el gestor de paquetes que usa.</p>
+<h4>Ejemplo: instalar <code>python</code> en contenedor</h4>
+<p>En este ejemplo instalaremos <code>python</code> en un contenedor previamente descargado aquí llamado <code>cuda-11.2.2</code> (reemplaza el nombre por el de tu contenedor).
+Primero, verificaremos si existe <code>python</code> o no.</p>
+<pre><code>➜  ~ srun --container-name=cuda-11.2.2 --pty bash     
+cnavarro@nodeGPU01:~$ python --version
+bash: python: command not found
+cnavarro@nodeGPU01:~$ exit
+exit
+srun: error: nodeGPU01: task 0: Exited with exit code 127
+➜  ~ </code></pre>
+<p>Efectivamente, <code>python</code> no existe en el contenedor ya que el contenedor de CUDA no lo incluye por defecto. Para instalar un paquete, volveremos a entrar al contenedor pero esta vez como <code>root</code>, pasando el parametro <code>--container-remap-root</code> en la linea de <code>srun</code>:</p>
+<pre><code>➜  ~ srun --container-name=cuda-11.2.2 --container-remap-root --pty bash
+root@nodeGPU01:/home/cnavarro# cd
+root@nodeGPU01:~# pwd
+/root</code></pre>
+<p>Siguiendo con el ejemplo, instalaremos <code>python</code> con  <code>apt-get</code>.</p>
+<pre><code>➜  ~ srun --container-name=cuda-11.2.2 --container-remap-root --pty bash
+root@nodeGPU01:~# apt-get install python         
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+Note, selecting 'python-is-python2' instead of 'python'
+The following additional packages will be installed:
+  file libmagic-mgc libmagic1 libpython2-stdlib libpython2.7-minimal libpython2.7-stdlib mime-support python2 python2-minimal
+  python2.7 python2.7-minimal
+Suggested packages:
+  python2-doc python-tk python2.7-doc binfmt-support
+The following NEW packages will be installed:
+  file libmagic-mgc libmagic1 libpython2-stdlib libpython2.7-minimal libpython2.7-stdlib mime-support python-is-python2 python2
+  python2-minimal python2.7 python2.7-minimal
+0 upgraded, 12 newly installed, 0 to remove and 37 not upgraded.
+Need to get 4167 kB of archives.
+After this operation, 22.8 MB of additional disk space will be used.
+Do you want to continue? [Y/n] 
+Get:1 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 libpython2.7-minimal amd64 2.7.18-1~20.04.1 [335 kB]
+Get:2 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 python2.7-minimal amd64 2.7.18-1~20.04.1 [1285 kB]
+Get:3 http://archive.ubuntu.com/ubuntu focal/universe amd64 python2-minimal amd64 2.7.17-2ubuntu4 [27.5 kB]
+Get:4 http://archive.ubuntu.com/ubuntu focal/main amd64 mime-support all 3.64ubuntu1 [30.6 kB]
+...
+...
+Setting up file (1:5.38-4) ...
+Setting up libpython2.7-stdlib:amd64 (2.7.18-1~20.04.1) ...
+Setting up python2.7 (2.7.18-1~20.04.1) ...
+Setting up libpython2-stdlib:amd64 (2.7.17-2ubuntu4) ...
+Setting up python2 (2.7.17-2ubuntu4) ...
+Setting up python-is-python2 (2.7.17-4) ...
+Processing triggers for libc-bin (2.31-0ubuntu9.2) ...
+root@nodeGPU01:~# exit
+exit
+➜  ~ </code></pre>
+<p>La próxima vez que uno inicie el contenedor, python ya existirá en el ambiente.</p>
+<pre><code>➜  ~ srun --container-name=cuda-11.2.2 --pty bash 
+cnavarro@nodeGPU01:~$ python --version
+Python 2.7.18
+cnavarro@nodeGPU01:~$ exit
+exit
+➜  ~ </code></pre>
+<h3>5) Eliminar paquetes de un contenedor</h3>
+<p>La eliminación de un paquete es análoga a la instalación, es decir, entrar al contenedor como <code>root</code> y utilizar el gestor de paquetes (usualmente <code>apt</code>). Continuando con el ejemplo de la sección anterior, si quisiéramos eliminar <code>python</code> del contenedor <code>cuda-11.2.2</code>, ejecutaríamos:</p>
+<pre><code>➜  ~ srun --container-name=cuda-11.2.2 --container-remap-root --pty bash
+root@nodeGPU01:~# apt remove python</code></pre>
+
+                </section>
+            </section>
+                </section>
+
+    </div>
+
+            <section id="footer" class="section bg-gray">
+    <section class="container grid-xl">
+        <div class="theme-switch">
+   			<div class="switch"></div>
+  		</div>
+        <p style="float: left">Universidad Austral de Chile</p>
+    </section>
+</section>
+    
+        <div class="mobile-container">
+        <div class="overlay" id="overlay">
+            <div class="mobile-logo">
+                <a href="https://patagon.uach.cl/" class="navbar-brand mr-10">
+    <img src="./Patagón _ T04 - Administrar mis contenedores_files/patagon-logo-text-color.svg" alt="Patagón">
+</a>            </div>
+            <nav class="overlay-menu">
+                
+<ul class="tree treemenu treemenu-root">
+                <li class="tree-empty"><span class="toggler"></span>
+      <a href="https://patagon.uach.cl/" class="">
+        Home
+      </a>
+          </li>
+          <li class="tree-closed"><span class="toggler"></span>
+      <a href="https://patagon.uach.cl/patagon" class="">
+        Patagón
+      </a>
+            <ul class="treemenu" style="display: none;">
+                    <li class="tree-empty"><span class="toggler"></span>
+      <a href="https://patagon.uach.cl/patagon/especificaciones-tecnicas" class="">
+        Especificaciones-tecnicas
+      </a>
+          </li>
+          <li class="tree-empty"><span class="toggler"></span>
+      <a href="https://patagon.uach.cl/patagon/solicitud" class="">
+        Solicitud de uso
+      </a>
+          </li>
+          <li class="tree-empty"><span class="toggler"></span>
+      <a href="https://patagon.uach.cl/patagon/entorno-slurm" class="">
+        Entorno SLURM
+      </a>
+          </li>
+          <li class="tree-empty"><span class="toggler"></span>
+      <a href="https://patagon.uach.cl/patagon/agradecimientos-y-citacion" class="">
+        Agradecimientos y citación
+      </a>
+          </li>
+  
+      </ul>
+          </li>
+          <li class="tree-closed"><span class="toggler"></span>
+      <a href="https://patagon.uach.cl/tutoriales" class="active">
+        Tutoriales
+      </a>
+            <ul class="treemenu" style="display: none;">
+                    <li class="tree-empty"><span class="toggler"></span>
+      <a href="https://patagon.uach.cl/tutoriales/t01-generar-llave-ssh" class="">
+        T01 - Generar llave SSH
+      </a>
+          </li>
+          <li class="tree-empty"><span class="toggler"></span>
+      <a href="https://patagon.uach.cl/tutoriales/contenedores-en-patagon" class="">
+        T02 - Contenedores en Patagón
+      </a>
+          </li>
+          <li class="tree-empty"><span class="toggler"></span>
+      <a href="https://patagon.uach.cl/tutoriales/how-to-launch-slurm-jobs" class="">
+        T03 - Ejecución de Tareas
+      </a>
+          </li>
+          <li class="tree-empty"><span class="toggler"></span>
+      <a href="https://patagon.uach.cl/tutoriales/administracion-contenedores" class="active">
+        T04 - Administrar mis contenedores
+      </a>
+          </li>
+          <li class="tree-empty"><span class="toggler"></span>
+      <a href="https://patagon.uach.cl/tutoriales/t05-machine-learning-con-python-en-patagon" class="">
+        T05 - Machine Learning con Python en Patagon
+      </a>
+          </li>
+          <li class="tree-empty"><span class="toggler"></span>
+      <a href="https://patagon.uach.cl/tutoriales/t06-cheat-sheet-patagon" class="">
+        T06 - Cheat Sheet Patagon
+      </a>
+          </li>
+  
+      </ul>
+          </li>
+          <li class="tree-empty"><span class="toggler"></span>
+      <a href="https://patagon.uach.cl/research" class="">
+        Research
+      </a>
+          </li>
+          <li class="tree-empty"><span class="toggler"></span>
+      <a href="https://patagon.uach.cl/live-metrics" class="">
+        Live-metrics
+      </a>
+          </li>
+          <li class="tree-empty"><span class="toggler"></span>
+      <a href="https://patagon.uach.cl/contacto" class="">
+        Contacto
+      </a>
+          </li>
+  
+</ul>
+
+            </nav>
+        </div>
+    </div>
+    
+    <script src="./Patagón _ T04 - Administrar mis contenedores_files/jquery.treemenu.js"></script>
+<script src="./Patagón _ T04 - Administrar mis contenedores_files/site.js"></script>
+
+
+
+
+<div class="vtooltip" id="vtooltip"><div id="vtooltipBody" class="vtooltip__body"><div class="vspinner"></div></div><div class="vtooltip__footer"><p id="vtooltipMessage" class="vtooltip__message">loading...</p><img src="chrome-extension://gjdimoodoalmblikhoicpcfnhlkkghgf/resources/img/vlex-logo_pop.svg" class="vtooltip__logo"></div></div></body></html>
