@@ -1,1 +1,3 @@
 # IPre_DiffLogicCA
+
+PENDIENTE
