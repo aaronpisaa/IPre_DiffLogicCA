@@ -1,0 +1,4 @@
+[NbConvertApp] Converting notebook diffLogic_CA.ipynb to notebook
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** JOB 72410 ON nodeGPU02 CANCELLED AT 2025-10-12T19:18:25 ***
+slurmstepd: error: *** STEP 72410.0 ON nodeGPU02 CANCELLED AT 2025-10-12T19:18:25 ***

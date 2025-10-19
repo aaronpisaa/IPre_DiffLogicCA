@@ -1,0 +1,2 @@
+pyxis: importing docker image: nvcr.io/nvidia/cuda:12.9.1-base-ubuntu24.04
+pyxis: imported docker image: nvcr.io/nvidia/cuda:12.9.1-base-ubuntu24.04
